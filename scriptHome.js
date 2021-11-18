@@ -58,17 +58,17 @@ slider.addEventListener("change", function () {
 selectLevel.addEventListener("click", function () {
   makeSound();
   if (slider.value == 1) {
-    window.open("OnePlayer/Easy/index.html");
+    window.open("https://anaselkalla.github.io/TicTacToe/OnePlayer/Easy/index.html");
   } else if (slider.value == 2) {
-    window.location.href = "OnePlayer/Medium/index.html";
+    window.location.href = "https://anaselkalla.github.io/TicTacToe/OnePlayer/Medium/index.html";
   } else if (slider.value == 3) {
-    window.location.href = "OnePlayer/Hard/index.html";
+    window.location.href = "https://anaselkalla.github.io/TicTacToe/OnePlayer/Hard/index.html";
   }
 });
 
 twoPlayers.addEventListener("click", function () {
   makeSound();
-  window.open("TwoPlayers/index.html");
+  window.open("https://anaselkalla.github.io/TicTacToe/TwoPlayers/index.html");
 });
 let activeMenu = false;
 
