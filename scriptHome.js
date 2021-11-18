@@ -58,17 +58,17 @@ slider.addEventListener("change", function () {
 selectLevel.addEventListener("click", function () {
   makeSound();
   if (slider.value == 1) {
-    window.open("One Player/Easy/index.html");
+    window.open("OnePlayer/Easy/index.html");
   } else if (slider.value == 2) {
-    window.location.href = "One Player/Medium/index.html";
+    window.location.href = "OnePlayer/Medium/index.html";
   } else if (slider.value == 3) {
-    window.location.href = "One Player/Hard/index.html";
+    window.location.href = "OnePlayer/Hard/index.html";
   }
 });
 
 twoPlayers.addEventListener("click", function () {
   makeSound();
-  window.open("Two Players/index.html");
+  window.open("TwoPlayers/index.html");
 });
 let activeMenu = false;
 
