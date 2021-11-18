@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fruktur&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <i class="fas fa-home"></i> <i class="fas fa-bars"></i>
+    </div>
+    <h1>XO GAME</h1>
+    <h4 class="turn"></h4>
+    <div class="popUp">
+      <div class="newGame">New Game</div>
+      <div class="exitGame" value="Close window" onClick="javascript:window.close('','_self','');">
+
+        EXIT
+      </div>    </div>
+    <div class="allFlex"> <div class="container" style="display: grid;">
+      <div class="cell7 cell"></div>
+      <div class="cell8 cell"></div>
+      <div class="cell9 cell"></div>
+      <div class="cell4 cell"></div>
+      <div class="cell5 cell"></div>
+      <div class="cell6 cell"></div>
+      <div class="cell1 cell"></div>
+      <div class="cell2 cell"></div>
+      <div class="cell3 cell"></div>
+    </div>
+  </div>
+  <button id="clear">REFRESH</button>
+  <h2 id="message"></h2></div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
