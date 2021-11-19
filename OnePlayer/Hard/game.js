@@ -231,7 +231,7 @@ if (ended === false) {
       const playerX = function () {
         for (let x = 0; x < 9; x++) {
           if (active === false && ended === false) {
-            for (let a = 0; a < 8; a++) {
+            for (let a = 0; a < 7; a++) {
               const winningGame = winning[a];
               let first = mark[winningGame[0]];
               let second = mark[winningGame[1]];
@@ -393,7 +393,7 @@ if (ended === false) {
         const playerO = function () {
           for (let x = 0; x < 9; x++) {
             if (active === false && ended === false) {
-              for (let a = 0; a < 8; a++) {
+              for (let a = 0; a < 7; a++) {
                 const winningGame = winning[a];
                 let first = mark[winningGame[0]];
                 let second = mark[winningGame[1]];
