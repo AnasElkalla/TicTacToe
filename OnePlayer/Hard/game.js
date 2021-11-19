@@ -208,14 +208,14 @@ if (ended === false) {
     clearGame.style.display = "inline-block";
 
     turn.textContent = "You Start";
-
-    document.addEventListener("click", function (e) {
-      for (let i = 0; i < 9; i++) {
-        if (
-          results.length === 0 ||
-          results[results.length - 1].textContent === "O"
-        ) {
-          if (e.target === table[i] && !results.includes(e.target)) {
+    for (let i = 0; i < 9; i++) {
+      document.addEventListener("click", function (e) {
+        for (let i = 0; i < 9; i++) {
+          if (
+            e.target === table[i] &&
+            !results.includes(e.target) &&
+            active === true
+          ) {
             table[i].textContent = "X";
             results.push(table[i]);
             mark[i] = "X";
@@ -224,133 +224,133 @@ if (ended === false) {
             makeSound();
             statusGame();
             change();
+            continue;
           }
-          continue;
         }
-      }
-      const playerX = function () {
-        for (let x = 0; x < 9; x++) {
-          if (active === false && ended === false) {
-            for (let a = 0; a < 7; a++) {
-              const winningGame = winning[a];
-              let first = mark[winningGame[0]];
-              let second = mark[winningGame[1]];
-              let third = mark[winningGame[2]];
-              if (
-                first === second &&
-                second === "O" &&
-                mark[winningGame[2]] === "" &&
-                active === false
-              ) {
-                console.log(winningGame[2]);
-                table[winningGame[2]].textContent = "O";
-                results.push(table[winningGame[2]]);
-                mark[winningGame[2]] = "O";
-                turn.textContent = "Your Turn";
-                console.log(mark);
-                makeSound();
-                statusGame();
-                change();
-                break;
-              } else if (
-                first === third &&
-                third === "O" &&
-                mark[winningGame[1]] === "" &&
-                active === false
-              ) {
-                console.log(winningGame[1]);
-                table[winningGame[1]].textContent = "O";
-                results.push(table[winningGame[1]]);
-                mark[winningGame[1]] = "O";
-                turn.textContent = "Your Turn";
-                console.log(mark);
-                makeSound();
-                statusGame();
-                change();
-                break;
-              } else if (
-                second === third &&
-                third === "O" &&
-                mark[winningGame[0]] === "" &&
-                active === false
-              ) {
-                console.log(winningGame[0]);
-                table[winningGame[0]].textContent = "O";
-                results.push(table[winningGame[1]]);
-                mark[winningGame[0]] = "O";
-                turn.textContent = "Your Turn";
-                console.log(mark);
-                makeSound();
-                statusGame();
-                change();
-                break;
-              } else if (
-                first === second &&
-                second === "X" &&
-                mark[winningGame[2]] === "" &&
-                active === false
-              ) {
-                console.log(winningGame[2]);
-                table[winningGame[2]].textContent = "O";
-                results.push(table[winningGame[2]]);
-                mark[winningGame[2]] = "O";
-                turn.textContent = "Your Turn";
-                console.log(mark);
-                makeSound();
-                statusGame();
-                change();
-                break;
-              } else if (
-                first === third &&
-                third === "X" &&
-                mark[winningGame[1]] === "" &&
-                active === false
-              ) {
-                console.log(winningGame[1]);
-                table[winningGame[1]].textContent = "O";
-                results.push(table[winningGame[1]]);
-                mark[winningGame[1]] = "O";
-                turn.textContent = "Your Turn";
-                console.log(mark);
-                makeSound();
-                statusGame();
-                change();
-                break;
-              } else if (
-                second === third &&
-                third === "X" &&
-                mark[winningGame[0]] === "" &&
-                active === false
-              ) {
-                console.log(winningGame[0]);
-                table[winningGame[0]].textContent = "O";
-                results.push(table[winningGame[1]]);
-                mark[winningGame[0]] = "O";
-                turn.textContent = "Your Turn";
-                console.log(mark);
-                makeSound();
-                statusGame();
-                change();
-                break;
+        const playerX = function () {
+          for (let x = 0; x < 9; x++) {
+            if (active === false && ended === false) {
+              for (let a = 0; a < 8; a++) {
+                const winningGame = winning[a];
+                let first = mark[winningGame[0]];
+                let second = mark[winningGame[1]];
+                let third = mark[winningGame[2]];
+                if (
+                  first === second &&
+                  second === "O" &&
+                  mark[winningGame[2]] === "" &&
+                  active === false
+                ) {
+                  console.log(winningGame[2]);
+                  table[winningGame[2]].textContent = "O";
+                  results.push(table[winningGame[2]]);
+                  mark[winningGame[2]] = "O";
+                  turn.textContent = "Your Turn";
+                  console.log(mark);
+                  makeSound();
+                  statusGame();
+                  change();
+                  break;
+                } else if (
+                  first === third &&
+                  third === "O" &&
+                  mark[winningGame[1]] === "" &&
+                  active === false
+                ) {
+                  console.log(winningGame[1]);
+                  table[winningGame[1]].textContent = "O";
+                  results.push(table[winningGame[1]]);
+                  mark[winningGame[1]] = "O";
+                  turn.textContent = "Your Turn";
+                  console.log(mark);
+                  makeSound();
+                  statusGame();
+                  change();
+                  break;
+                } else if (
+                  second === third &&
+                  third === "O" &&
+                  mark[winningGame[0]] === "" &&
+                  active === false
+                ) {
+                  console.log(winningGame[0]);
+                  table[winningGame[0]].textContent = "O";
+                  results.push(table[winningGame[1]]);
+                  mark[winningGame[0]] = "O";
+                  turn.textContent = "Your Turn";
+                  console.log(mark);
+                  makeSound();
+                  statusGame();
+                  change();
+                  break;
+                } else if (
+                  first === second &&
+                  second === "X" &&
+                  mark[winningGame[2]] === "" &&
+                  active === false
+                ) {
+                  console.log(winningGame[2]);
+                  table[winningGame[2]].textContent = "O";
+                  results.push(table[winningGame[2]]);
+                  mark[winningGame[2]] = "O";
+                  turn.textContent = "Your Turn";
+                  console.log(mark);
+                  makeSound();
+                  statusGame();
+                  change();
+                  break;
+                } else if (
+                  first === third &&
+                  third === "X" &&
+                  mark[winningGame[1]] === "" &&
+                  active === false
+                ) {
+                  console.log(winningGame[1]);
+                  table[winningGame[1]].textContent = "O";
+                  results.push(table[winningGame[1]]);
+                  mark[winningGame[1]] = "O";
+                  turn.textContent = "Your Turn";
+                  console.log(mark);
+                  makeSound();
+                  statusGame();
+                  change();
+                  break;
+                } else if (
+                  second === third &&
+                  third === "X" &&
+                  mark[winningGame[0]] === "" &&
+                  active === false
+                ) {
+                  console.log(winningGame[0]);
+                  table[winningGame[0]].textContent = "O";
+                  results.push(table[winningGame[1]]);
+                  mark[winningGame[0]] = "O";
+                  turn.textContent = "Your Turn";
+                  console.log(mark);
+                  makeSound();
+                  statusGame();
+                  change();
+                  break;
+                }
               }
             }
+            let roll = Math.floor(Math.random() * 9);
+            if (mark[roll] === "" && active === false && ended === false) {
+              table[roll].textContent = "O";
+              results.push(table[roll]);
+              mark[roll] = "O";
+              console.log("step1B");
+              turn.textContent = "Your Turn";
+              makeSound();
+              statusGame();
+              change();
+              break;
+            }
           }
-          let roll = Math.floor(Math.random() * 9);
-          if (mark[roll] === "" && active === false && ended === false) {
-            table[roll].textContent = "O";
-            results.push(table[roll]);
-            mark[roll] = "O";
-            console.log("step1B");
-            turn.textContent = "Your Turn";
-            makeSound();
-            statusGame();
-            change();
-            break;
-          }
-        }
-      };
-      setTimeout(playerX, 2000);
-    });
+        };
+        setTimeout(playerX, 2000);
+      });
+    }
   }
 
   if (starter === 1) {
@@ -393,14 +393,14 @@ if (ended === false) {
         const playerO = function () {
           for (let x = 0; x < 9; x++) {
             if (active === false && ended === false) {
-              for (let a = 0; a < 7; a++) {
+              for (let a = 0; a < 8; a++) {
                 const winningGame = winning[a];
                 let first = mark[winningGame[0]];
                 let second = mark[winningGame[1]];
                 let third = mark[winningGame[2]];
                 if (
                   first === second &&
-                  second === "O" &&
+                  second === "X" &&
                   mark[winningGame[2]] === "" &&
                   active === false
                 ) {
@@ -416,7 +416,7 @@ if (ended === false) {
                   break;
                 } else if (
                   first === third &&
-                  third === "O" &&
+                  third === "X" &&
                   mark[winningGame[1]] === "" &&
                   active === false
                 ) {
@@ -432,7 +432,7 @@ if (ended === false) {
                   break;
                 } else if (
                   second === third &&
-                  second === "O" &&
+                  second === "X" &&
                   mark[winningGame[0]] === "" &&
                   active === false
                 ) {
